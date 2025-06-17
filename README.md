@@ -74,7 +74,7 @@ service. It is enabled when deploying to the test and production environments.
 The unit tests are located in the `src/test` directory of each service and are run during the Build 
 phase in the deployment pipeline.
   - **Insurance Service**
-    - 3 unit tests (`InsuranceServiceTest`)
+    - 4 unit tests (`InsuranceServiceTest`)
   - **Vehicle Service**
     - 1 unit test (`VehicleServiceTest`)
 - **Integration tests** - Middle of the pyramid, fewer test on interconnected components. The
