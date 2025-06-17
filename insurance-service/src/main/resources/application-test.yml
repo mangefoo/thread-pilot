@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+vehicle-service:
+    url: http://vehicle.test.thread-pilot.int.mindphaser.se
+
+feature-flags:
+  flagsmith:
+    enabled: true
+    api-url: http://flagsmith-api.int.mindphaser.se/api/v1/
+    environment-key: ser.EhXHhE7BPeUjvRRh2HQJdu

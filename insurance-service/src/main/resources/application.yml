@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+vehicle-service:
+    url: http://localhost:8081
+
+feature-flags:
+  flagsmith:
+    enabled: false
+    api-url: http://<change>/api/v1/
+    environment-key: <change>

@@ -1,0 +1,2 @@
+rootProject.name = 'thread-pilot'
+include 'vehicle-service', 'insurance-service'

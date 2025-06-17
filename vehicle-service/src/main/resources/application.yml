@@ -1,0 +1,3 @@
+server:
+  port: 8081
+# No feature toggles in Vehicle Service
