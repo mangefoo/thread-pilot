@@ -61,4 +61,44 @@ class InsuranceControllerIntegrationTest {
 
         JSONAssert.assertEquals(expectedJson, actualJson, true);
     }
+
+    @Test
+    void testGetInsurancesWithVehicleAndNoDiscount() throws Exception{
+        when(vehicleClient.getVehicle("XYZ123")).thenReturn(Vehicle.builder()
+            .registrationNumber("XYZ123")
+            .make("Toyota")
+            .model("Camry")
+            .year(2020)
+            .build());
+        var actualJson = restTemplate.getForObject("/v1/insurances/1111111111", String.class);
+        var expectedJson = """
+[
+  {
+    "id": 1,
+    "type": "PET",
+    "monthlyCost": 10
+  },
+  {
+    "id": 2,
+    "type": "HEALTH",
+    "monthlyCost": 20
+  },
+  {
+    "id": 3,
+    "type": "CAR",
+    "registrationNumber": "XYZ123",
+    "vehicle": {
+      "registrationNumber": "XYZ123",
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2020
+    },
+    "monthlyCost": 30
+  }
+]
+""";
+
+        JSONAssert.assertEquals(expectedJson, actualJson, true);
+    }
 }
+
